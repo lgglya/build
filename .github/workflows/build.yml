@@ -1,0 +1,16 @@
+name: Build Armbian Image
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: armbian/build@main
+        with:
+          armbian_token: ${{ secrets.GITHUB_TOKEN }}
+          armbian_board: "aml-s9xx-box"
+          armbian_release: "resolute" # Меняем с trixie на resolute
+          armbian_target: "build"
+          armbian_ui: "minimal"       # Оставляем минимальную CLI-версию
+          armbian_runner_clean: "yes"
