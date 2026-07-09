@@ -1,5 +1,4 @@
 name: Build Armbian Image T95Z
-
 on:
   workflow_dispatch:
 
@@ -7,14 +6,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Armbian Builder Action
-        uses: armbian/build@main
+      - uses: armbian/build@main
         with:
           armbian_token: ${{ secrets.GITHUB_TOKEN }}
           armbian_board: "aml-t95z-plus"
-          armbian_branch: "current"       
           armbian_release: "bookworm"        
           armbian_target: "build"
           armbian_ui: "minimal"
           armbian_runner_clean: "yes"
-
