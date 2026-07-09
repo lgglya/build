@@ -14,7 +14,7 @@ jobs:
           armbian_board: "aml-t95z-plus"
           armbian_branch: "current"       
           armbian_release: "bookworm"        
-          armbian_target: "image"
+          armbian_target: "build"
           armbian_ui: "minimal"
           armbian_runner_clean: "yes"
 
